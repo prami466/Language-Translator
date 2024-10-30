@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Translation</title>
+     <style>
+        body {
+            background-image:url('https://img.freepik.com/vektoren-premium/fallende-buchstaben-der-englischen-sprache-helle-handgezeichnete-fliegende-woerter-des-lateinischen-alphabets-studienkonzept-fuer-fremdsprachen-aussergewoehnliche-zurueck-zu-schulfahne-auf-weissem-hintergrund_174187-568.jpg?w=2000');
+
+            background-repeat:no_repeat;
+            background-attachment:fixed;
+            background-size:100%
+
+            /* This ensures the image covers the entire background */
+        }
+        form{
+        width:500px;
+        margin:0 auto;
+        }
+
+        /* Change the vertical alignment of the placeholder text to the middle */
+       /* Change both horizontal and vertical alignment of the placeholder text */
+       /* Change the position of the placeholder text to a custom location */
+       form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+       }
+
+
+        /* Change the text color of the textarea */
+        textarea {
+            width: 100%;
+            background-color: white; /* Change the background color of the textarea */
+            color:green; /* Change the text color inside the textarea */
+    }
+
+
+        h1 {
+            color: green; /* Change the title text color */
+        }
+        h1 {
+            text-align: center; /* Center-align the title horizontally */
+            margin-top: 10vh; /* Center the title vertically */
+        }
+        h2{
+        color:green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>English to French Translation</h1>
+    <form method="POST" action="/">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter English text..."></textarea>
+        <br>
+        <input type="submit" value="Translate">
+        {% if translated_text %}
+        <h2>Translation:</h2>
+        <textarea id="translated-text" rows="4" cols="50" readonly>{{ translated_text }}</textarea>
+        {% endif %}
+        {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+    </form>
+</body>
+</html>
